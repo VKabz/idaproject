@@ -22,32 +22,19 @@ export default function Header() {
 
   return (
     <>
-      <header className="bg-white py-3 fixed left-0 right-0 z-10">
+      <header className="bg-white py-3 fixed left-0 right-0 z-20">
         <div className="_container flex items-center justify-between">
           <div className="flex items-center">
             <img src="img/logo-2.svg" alt="" className="h-20 mr-6" />
             <div className="h-[2.4rem] w-[2.4rem] fill-transparent stroke-[#1a1b1d]">
               <svg width="100%" height="100%" viewBox="0 0 48 48">
-                <circle
-                  r="16"
-                  cx="24"
-                  cy="24"
-                  strokeWidth="4"
-                  strokeDasharray="100"
-                  strokeDashoffset="100"
-                  style={{ strokeDashoffset: `${value}px` }}
-                ></circle>
+                <circle r="16" cx="24" cy="24" strokeWidth="4" strokeDasharray="100" strokeDashoffset="100" style={{ strokeDashoffset: `${value}px` }}></circle>
               </svg>
             </div>
-            <button className="font-medium text-[1.6rem] leading-[16px] text-[#1A1B1D] tracking-[-.016rem] ml-[4.8rem]">
-              кейсы
-            </button>
+            <button className="font-medium text-[1.6rem] leading-[16px] text-[#1A1B1D] tracking-[-.016rem] ml-[4.8rem]">кейсы</button>
           </div>
           <div className="flex gap-10 items-center">
-            <a
-              className="text-[1.4rem] leading-[16px] text-[#1A1B1D] font-medium tracking-[-.014rem]"
-              href="tel:8(495)646-09-06"
-            >
+            <a className="text-[1.4rem] leading-[16px] text-[#1A1B1D] font-medium tracking-[-.014rem]" href="tel:8(495)646-09-06">
               8 495 646 09 06
             </a>
             <div className="flex text-[1.6rem] text-[#1A1B1D] leading-[18px] font-medium tracking-[-.016rem]">
@@ -72,15 +59,8 @@ export default function Header() {
         </div>
       </header>
 
-      {activeModal && (
-        <RequestModal activeModal={activeModal} closeModal={setActiveModal} />
-      )}
-      {activeContactsModal && (
-        <ContactsModal
-          activeModal={activeContactsModal}
-          closeModal={setActiveContactsModal}
-        />
-      )}
+      {activeModal && <RequestModal activeModal={activeModal} closeModal={setActiveModal} />}
+      {activeContactsModal && <ContactsModal activeModal={activeContactsModal} closeModal={setActiveContactsModal} />}
     </>
   );
 }

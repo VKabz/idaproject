@@ -33,7 +33,7 @@ export default function Project() {
   return (
     <div
       className={classNames(
-        "py-[2rem] border-[#f0f1f0] border-y-[1px] cursor-pointer duration-1000 hover:bg-[#f6f6f6] overflow-hidden ease-in-out",
+        "py-[2rem] border-[#f0f1f0] border-y-[1px] cursor-pointer duration-1000 hover:bg-[#f6f6f6] overflow-hidden ease-in-out bg-white z-10 relative",
         active && "bg-[#f6f6f6]",
         active ? "max-h-[1000px]" : "max-h-[336.69px]"
       )}
@@ -57,17 +57,8 @@ export default function Project() {
           <div className="ml-auto relative pr-10">
             <div className="flex flex-col justify-between h-full w-[49rem]">
               <div className="flex items-end">
-                <div
-                  className={classNames(
-                    "text-[1.2rem] tracking-[-.012rem] uppercase font-medium text-[#1a1b1d]"
-                  )}
-                >
-                  <ul
-                    className={classNames(
-                      "flex-wrap flex gap-y-[.4rem]",
-                      active && "flex-col items-start gap-y-[4rem]"
-                    )}
-                  >
+                <div className={classNames("text-[1.2rem] tracking-[-.012rem] uppercase font-medium text-[#1a1b1d]")}>
+                  <ul className={classNames("flex-wrap flex gap-y-[.4rem]", active && "flex-col items-start gap-y-[4rem]")}>
                     {projectList.map((item, index) => (
                       <li key={index}>
                         <div
@@ -90,22 +81,14 @@ export default function Project() {
                             <button
                               className={classNames(
                                 "bg-[#d5ff0c] text-[1.2rem] h-[2.4rem] tracking-[-.012rem] px-[.8rem] uppercase font-medium text-[#1a1b1d] opacity-0 invisible duration-300 absolute",
-                                active &&
-                                  "group-hover:opacity-100 group-hover:visible !static"
+                                active && "group-hover:opacity-100 group-hover:visible !static"
                               )}
                             >
                               перейти на сайт
                             </button>
                           )}
                         </div>
-                        <p
-                          className={classNames(
-                            "tracking-[-.014rem] text-[#6d6d75] text-[1.4rem] lowercase hidden",
-                            active && "!block mt-[.8rem]"
-                          )}
-                        >
-                          {item.text}
-                        </p>
+                        <p className={classNames("tracking-[-.014rem] text-[#6d6d75] text-[1.4rem] lowercase hidden", active && "!block mt-[.8rem]")}>{item.text}</p>
                       </li>
                     ))}
                   </ul>
@@ -119,15 +102,8 @@ export default function Project() {
                   +[1]
                 </button>
               </div>
-              <p
-                className={classNames(
-                  "text-[#6d6d75] text-[1.4rem] tracking-[-.014rem] leading-[130%] max-w-[37rem] lowercase",
-                  active && "hidden"
-                )}
-              >
-                работаем со старейшим застройщиком красноярского края для
-                обновления облика сайта застройщика и цифровизации деятельности
-                компании
+              <p className={classNames("text-[#6d6d75] text-[1.4rem] tracking-[-.014rem] leading-[130%] max-w-[37rem] lowercase", active && "hidden")}>
+                работаем со старейшим застройщиком красноярского края для обновления облика сайта застройщика и цифровизации деятельности компании
               </p>
             </div>
             <div
